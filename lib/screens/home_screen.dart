@@ -115,76 +115,77 @@ class _HomePageState extends State<HomePage> {
               const SizedBox(
                 height: 15,
               ),
-              ListView.builder(
-                physics: const NeverScrollableScrollPhysics(),
-                itemCount: 4,
-                shrinkWrap: true,
-                padding: const EdgeInsets.all(8),
-                itemBuilder: (context, index) {
-                  return Padding(
-                    padding: const EdgeInsets.all(15),
-                    child: Column(
-                      children: [
-                        InkWell(
-                          onTap: () {
-                            Navigator.push(
-                                context,
-                                MaterialPageRoute(
-                                  builder: (context) => PostScreen(),
-                                ));
-                          },
-                          child: Container(
-                            height: 200,
-                            decoration: BoxDecoration(
-                                color: Colors.white,
-                                image: DecorationImage(
-                                  fit: BoxFit.cover,
-                                  image: AssetImage(
-                                      "lib/assets/city${index + 1}.jpg"),
-                                ),
-                                boxShadow: const [
-                                  BoxShadow(
-                                      color: Colors.black26, blurRadius: 5)
-                                ],
-                                borderRadius: BorderRadius.circular(15)),
-                          ),
-                        ),
-                        const SizedBox(
-                          height: 10,
-                        ),
-                        const Row(
-                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                          children: [
-                            Text(
-                              "City Name",
-                              style: TextStyle(
-                                  fontSize: 18, fontWeight: FontWeight.w800),
-                            ),
-                            Icon(Icons.more_vert)
-                          ],
-                        ),
-                        const SizedBox(
-                          height: 5,
-                        ),
-                        const Row(
-                          children: [
-                            Icon(
-                              Icons.star,
-                              color: Colors.yellow,
-                            ),
-                            Text("4.5")
-                          ],
-                        )
-                      ],
-                    ),
-                  );
-                },
-              )
+              buildListView()
             ],
           ),
         ),
         bottomNavigationBar: const BottomNavigationBarApp(),
       ),
+    );
+  }
+
+  ListView buildListView() {
+    return ListView.builder(
+      physics: const NeverScrollableScrollPhysics(),
+      itemCount: 4,
+      shrinkWrap: true,
+      padding: const EdgeInsets.all(8),
+      itemBuilder: (context, index) {
+        return Padding(
+          padding: const EdgeInsets.all(15),
+          child: Column(
+            children: [
+              InkWell(
+                onTap: () {
+                  Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => PostScreen(),
+                      ));
+                },
+                child: Container(
+                  height: 200,
+                  decoration: BoxDecoration(
+                      color: Colors.white,
+                      image: DecorationImage(
+                        fit: BoxFit.cover,
+                        image: AssetImage("lib/assets/city${index + 1}.jpg"),
+                      ),
+                      boxShadow: const [
+                        BoxShadow(color: Colors.black26, blurRadius: 5)
+                      ],
+                      borderRadius: BorderRadius.circular(15)),
+                ),
+              ),
+              const SizedBox(
+                height: 10,
+              ),
+              const Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  Text(
+                    "City Name",
+                    style: TextStyle(fontSize: 18, fontWeight: FontWeight.w800),
+                  ),
+                  Icon(Icons.more_vert)
+                ],
+              ),
+              const SizedBox(
+                height: 5,
+              ),
+              const Row(
+                children: [
+                  Icon(
+                    Icons.star,
+                    color: Colors.yellow,
+                  ),
+                  Text("4.5")
+                ],
+              )
+            ],
+          ),
+        );
+      },
     );
   }
 }
