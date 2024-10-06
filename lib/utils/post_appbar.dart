@@ -11,23 +11,27 @@ class PostAppBar extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
           Container(
-            padding: EdgeInsets.all(10),
+            padding: const EdgeInsets.all(10),
             decoration: BoxDecoration(
                 color: Colors.white,
                 borderRadius: BorderRadius.circular(15),
-                boxShadow: [BoxShadow(color: Colors.white, blurRadius: 6)]),
-            child: Icon(
+                boxShadow: [
+                  const BoxShadow(color: Colors.white, blurRadius: 6)
+                ]),
+            child: const Icon(
               Icons.arrow_back_ios,
               size: 20,
             ),
           ),
           Container(
-            padding: EdgeInsets.all(10),
+            padding: const EdgeInsets.all(10),
             decoration: BoxDecoration(
                 color: Colors.white,
                 borderRadius: BorderRadius.circular(15),
-                boxShadow: [BoxShadow(color: Colors.white, blurRadius: 6)]),
-            child: Icon(
+                boxShadow: [
+                  const BoxShadow(color: Colors.white, blurRadius: 6)
+                ]),
+            child: const Icon(
               Icons.favorite,
               color: Colors.redAccent,
               size: 20,
